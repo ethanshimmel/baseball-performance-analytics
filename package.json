@@ -1,0 +1,36 @@
+{
+  "name": "baseball-performance-analytics",
+  "version": "1.0.0",
+  "description": "Baseball batting statistics and performance dashboard",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanshimmel/baseball-performance-analytics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ethanshimmel/baseball-performance-analytics/issues"
+  },
+  "homepage": "https://github.com/ethanshimmel/baseball-performance-analytics#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.2.0",
+    "dotenv": "^18.0.10",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.3.2"
+  }
+}
