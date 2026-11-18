@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Game Statistics</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Enter Game Statistics</h1>
+
+    <% if (error) { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+
+    <form action="/games" method="POST">
+        <label>Game Date</label>
+        <input type="date" name="date" required>
+
+        <label>Opponent</label>
+        <input type="text" name="opponent" required>
+
+        <% const fields = [
+            ["atBats", "At-Bats"],
+            ["hits", "Hits"],
+            ["doubles", "Doubles"],
+            ["triples", "Triples"],
+            ["homeRuns", "Home Runs"],
+            ["walks", "Walks"],
+            ["hitByPitch", "Hit By Pitch"],
+            ["sacrificeFlies", "Sacrifice Flies"],
+            ["strikeouts", "Strikeouts"],
+            ["stolenBases", "Stolen Bases"]
+        ]; %>
+
+        <% fields.forEach(field => { %>
+            <label><%= field[1] %></label>
+            <input type="number" name="<%= field[0] %>"
+                   min="0" step="1" value="0" required>
+        <% }); %>
+
+        <button type="submit">Save Game</button>
+    </form>
+
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

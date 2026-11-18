@@ -5,6 +5,7 @@ const session = require("express-session");
 const path = require("path");
 
 const authRoutes = require("./routes/authRoutes");
+const gameRoutes = require("./routes/gameRoutes");
 
 
 const app = express();
@@ -31,6 +32,6 @@ app.get("/", (req, res) => {
 });
 
 app.use(authRoutes);
-
+app.use(gameRoutes);
 
 module.exports = app;
