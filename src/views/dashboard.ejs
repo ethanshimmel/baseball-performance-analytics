@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Baseball Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Baseball Performance Dashboard</h1>
+
+    <form action="/logout" method="POST">
+        <button type="submit">Log Out</button>
+    </form>
+
+    <a href="/games/new">Enter New Game</a>
+
+    <h2>Season Statistics</h2>
+
+    <div class="stats">
+        <p>Games: <%= games.length %></p>
+        <p>At-Bats: <%= totals.atBats %></p>
+        <p>Hits: <%= totals.hits %></p>
+        <p>Home Runs: <%= totals.homeRuns %></p>
+        <p>AVG: <%= totals.avg.toFixed(3) %></p>
+        <p>OBP: <%= totals.obp.toFixed(3) %></p>
+        <p>SLG: <%= totals.slg.toFixed(3) %></p>
+        <p>OPS: <%= totals.ops.toFixed(3) %></p>
+        <p>Stolen Bases: <%= totals.stolenBases %></p>
+    </div>
+
+    <h2>Game History</h2>
+
+    <% if (games.length === 0) { %>
+        <p>No games entered yet. Add your first game to get started.</p>
+    <% } else { %>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Opponent</th>
+                <th>AB</th>
+                <th>H</th>
+                <th>2B</th>
+                <th>3B</th>
+                <th>HR</th>
+                <th>BB</th>
+            </tr>
+
+            <% games.forEach(game => { %>
+                <tr>
+                    <td><%= game.game_date %></td>
+                    <td><%= game.opponent %></td>
+                    <td><%= game.at_bats %></td>
+                    <td><%= game.hits %></td>
+                    <td><%= game.doubles %></td>
+                    <td><%= game.triples %></td>
+                    <td><%= game.home_runs %></td>
+                    <td><%= game.walks %></td>
+                </tr>
+            <% }); %>
+        </table>
+    <% } %>
+</body>
+</html>
