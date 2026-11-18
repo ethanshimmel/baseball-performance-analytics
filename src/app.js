@@ -6,6 +6,7 @@ const path = require("path");
 
 const authRoutes = require("./routes/authRoutes");
 const gameRoutes = require("./routes/gameRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 
 
 const app = express();
@@ -33,5 +34,6 @@ app.get("/", (req, res) => {
 
 app.use(authRoutes);
 app.use(gameRoutes);
+app.use(dashboardRoutes);
 
 module.exports = app;
