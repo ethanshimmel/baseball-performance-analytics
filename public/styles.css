@@ -1,0 +1,259 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(15px, 4vw, 40px);
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Headings */
+h1 {
+    color: #17365d;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #17365d;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    margin: 25px 0 15px;
+}
+
+/* Forms and Sections */
+form,
+.stats {
+    background: white;
+    padding: clamp(15px, 3vw, 25px);
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background: #17365d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    max-width: 100%;
+}
+
+button:hover {
+    background: #245184;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid #4c9ffe;
+    outline-offset: 2px;
+}
+
+/* Links */
+a {
+    color: #245184;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Statistics Layout */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: 15px;
+}
+
+.stats p {
+    background: #f4f6f8;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Responsive Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin: 20px 0;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    white-space: nowrap;
+}
+
+th {
+    background: #17365d;
+    color: white;
+}
+
+/* Allows wide tables to scroll on small screens */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Error Messages */
+.error {
+    color: #b00020;
+    background: #ffe9ec;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Dashboard Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 0;
+}
+
+.dashboard-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-button,
+.logout-button {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.action-button {
+    background: #17365d;
+    color: white;
+}
+
+.action-button:hover {
+    background: #245184;
+    color: white;
+    text-decoration: none;
+}
+
+.logout-form {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background: none;
+    box-shadow: none;
+}
+
+.logout-button {
+    width: auto;
+    background: #777;
+}
+
+.logout-button:hover {
+    background: #555;
+}
+
+/* Mobile Dashboard Header */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .stats p {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 7px;
+        font-size: 0.8rem;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-actions {
+        width: 100%;
+    }
+
+    .action-button,
+    .logout-button {
+        flex: 1;
+    }
+}
