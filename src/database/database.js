@@ -2,6 +2,7 @@ const Database = require("better-sqlite3");
 const path = require("path");
 
 const db = new Database(
+    process.env.DATABASE_PATH ||
     path.join(__dirname, "../../baseball.db")
 );
 
